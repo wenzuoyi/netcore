@@ -1,24 +1,25 @@
-#include "udp_server_impl.h"
+#include "udp_endpoint_impl.h"
 #include "udp_session_handler.h"
+
 namespace netcore {
 
-	UDPServerImpl::UDPServerImpl() = default;
+	UDPEndPointImpl::UDPEndPointImpl() = default;
 
-	UDPServerImpl::~UDPServerImpl() = default;
+	UDPEndPointImpl::~UDPEndPointImpl() = default;
 
-  void UDPServerImpl::SetEvent(UDPServerEvent* event) {
+  void UDPEndPointImpl::SetEvent(UDPEndPointEvent* event) {
     event_ = event;
   }
 
-  int UDPServerImpl::Init(ThreadPoolPtr thread_pool) {
+  int UDPEndPointImpl::Init() {
 	  return BaseSession<Poco::Net::DatagramSocket>::Init();
   }
 
-  void UDPServerImpl::Fini() {
+  void UDPEndPointImpl::Fini() {
     return BaseSession<Poco::Net::DatagramSocket>::Fini();
   }
 
-  int UDPServerImpl::Start(unsigned port, IPAddressType ip_address_type, bool broadcast_flag) {
+  int UDPEndPointImpl::Start(unsigned port, IPAddressType ip_address_type, bool broadcast_flag) {
     auto result = BaseSession<Poco::Net::DatagramSocket>::Start();
     if (result != OK) {
       return result;
@@ -45,11 +46,11 @@ namespace netcore {
     return OK;
   }
 
-  void UDPServerImpl::Stop() {
+  void UDPEndPointImpl::Stop() {
 	  BaseSession<Poco::Net::DatagramSocket>::Stop();
   }
 
-  void UDPServerImpl::Send(const Poco::Buffer<char>& buffer, NetworkAddressPtr address) {
+  void UDPEndPointImpl::Send(const Poco::Buffer<char>& buffer, NetworkAddressPtr address) {
     GetSession(false, [buffer, address](const std::string& id, BaseSessionHandler<Poco::Net::DatagramSocket>* session) {
 		  Poco::Net::IPAddress ip_address(address->ip, (address->ip_address_type == IPAddressType::kIPv4 ? Poco::Net::AddressFamily::IPv4 : Poco::Net::AddressFamily::IPv6));
 		  Poco::Net::SocketAddress socket_address(ip_address, address->port);
@@ -57,14 +58,14 @@ namespace netcore {
     });
   }
 
-  void UDPServerImpl::OnCreate(const std::string& id, BaseSessionHandler<Poco::Net::DatagramSocket>* session) {
+  void UDPEndPointImpl::OnCreate(const std::string& id, BaseSessionHandler<Poco::Net::DatagramSocket>* session) {
 	  BaseSession<Poco::Net::DatagramSocket>::OnCreate(id, session);
     if (event_ != nullptr) {
       event_->OnUDPServerCreate(this);
     }
   }
 
-  void UDPServerImpl::OnRead(const Poco::Net::SocketAddress& address, const Poco::Buffer<char>& buffer) {
+  void UDPEndPointImpl::OnRead(const Poco::Net::SocketAddress& address, const Poco::Buffer<char>& buffer) {
     if (event_ != nullptr) {
       auto network_address = std::make_shared<NetworkAddress>();
       network_address->ip = address.host().toString();
@@ -74,14 +75,14 @@ namespace netcore {
     }
   }
 
-  void UDPServerImpl::OnException(const std::string& id, const std::string& message) {
+  void UDPEndPointImpl::OnException(const std::string& id, const std::string& message) {
     if (event_ != nullptr) {
       event_->OnUDPServerException(this, message);
     }
     BaseSession<Poco::Net::DatagramSocket>::OnException(id, message);
   }
 
-  void UDPServerImpl::OnDestroy(const std::string& id, BaseSessionHandler<Poco::Net::DatagramSocket>* session) {
+  void UDPEndPointImpl::OnDestroy(const std::string& id, BaseSessionHandler<Poco::Net::DatagramSocket>* session) {
     if (event_ != nullptr) {
       event_->OnUDPServerDestory(this);
     }

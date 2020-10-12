@@ -187,7 +187,7 @@
     <ClInclude Include="include\netcore_errorcode.h" />
     <ClInclude Include="include\tcp_client.h" />
     <ClInclude Include="include\tcp_server.h" />
-    <ClInclude Include="include\udp_server.h" />
+    <ClInclude Include="include\udp_endpoint.h" />
     <ClInclude Include="reactor_message_notification.h" />
     <ClInclude Include="tcp_client_impl.h" />
     <ClInclude Include="tcp_acceptor.h" />
@@ -195,7 +195,7 @@
     <ClInclude Include="tcp_server_impl.h" />
     <ClInclude Include="tcp_session_handler.h" />
     <ClInclude Include="session_list.hpp" />
-    <ClInclude Include="udp_server_impl.h" />
+    <ClInclude Include="udp_endpoint_impl.h" />
     <ClInclude Include="udp_session_handler.h" />
   </ItemGroup>
   <ItemGroup>
@@ -206,8 +206,8 @@
     <ClCompile Include="tcp_server.cc" />
     <ClCompile Include="tcp_server_impl.cc" />
     <ClCompile Include="tcp_session_handler.cc" />
-    <ClCompile Include="udp_server.cpp" />
-    <ClCompile Include="udp_server_impl.cc" />
+    <ClCompile Include="udp_endpoint.cpp" />
+    <ClCompile Include="udp_endpoint_impl.cc" />
     <ClCompile Include="udp_session_handler.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

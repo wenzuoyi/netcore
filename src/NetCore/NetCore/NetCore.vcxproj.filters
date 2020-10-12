@@ -24,12 +24,6 @@
     <Filter Include="udp">
       <UniqueIdentifier>{3054228d-6e53-4803-9c2a-07e283c0bfda}</UniqueIdentifier>
     </Filter>
-    <Filter Include="udp\server">
-      <UniqueIdentifier>{bef8f16a-4ec1-45f1-b18a-f4d0e08afa6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="udp\client">
-      <UniqueIdentifier>{501e202f-4556-463d-85c7-c1a4c06adb1a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\global_definition.h">
@@ -68,12 +62,6 @@
     <ClInclude Include="tcp_acceptor.h">
       <Filter>tcp\server</Filter>
     </ClInclude>
-    <ClInclude Include="include\udp_server.h">
-      <Filter>udp\server</Filter>
-    </ClInclude>
-    <ClInclude Include="udp_server_impl.h">
-      <Filter>udp\server</Filter>
-    </ClInclude>
     <ClInclude Include="udp_session_handler.h">
       <Filter>udp</Filter>
     </ClInclude>
@@ -82,6 +70,12 @@
     </ClInclude>
     <ClInclude Include="session_list.hpp">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\udp_endpoint.h">
+      <Filter>udp</Filter>
+    </ClInclude>
+    <ClInclude Include="udp_endpoint_impl.h">
+      <Filter>udp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,13 +100,13 @@
     <ClCompile Include="tcp_acceptor.cc">
       <Filter>tcp\server</Filter>
     </ClCompile>
-    <ClCompile Include="udp_server.cpp">
-      <Filter>udp\server</Filter>
-    </ClCompile>
-    <ClCompile Include="udp_server_impl.cc">
-      <Filter>udp\server</Filter>
-    </ClCompile>
     <ClCompile Include="udp_session_handler.cc">
+      <Filter>udp</Filter>
+    </ClCompile>
+    <ClCompile Include="udp_endpoint.cpp">
+      <Filter>udp</Filter>
+    </ClCompile>
+    <ClCompile Include="udp_endpoint_impl.cc">
       <Filter>udp</Filter>
     </ClCompile>
   </ItemGroup>

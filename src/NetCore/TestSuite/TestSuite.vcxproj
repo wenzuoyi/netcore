@@ -170,9 +170,11 @@
   <ItemGroup>
     <ClCompile Include="tcp_server_testsuite.cc" />
     <ClCompile Include="test_main.cc" />
+    <ClCompile Include="udp_server_testsuite.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tcp_server_testsuite.h" />
+    <ClInclude Include="udp_server_testsuite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,6 +3,7 @@
 #include <utility>
 #include <deque>
 #include <vector>
+#include <Poco/Mutex.h>
 #include <Poco/Net/DatagramSocket.h>
 #include "base_session_handler.hpp"
 namespace netcore {
@@ -19,6 +20,7 @@ namespace netcore {
     void HandleSocketShutdown() override;
   private:
 	  using Item = std::pair<Poco::Buffer<char>, Poco::Net::SocketAddress>;
+	  Poco::Mutex mutex_;
 	  std::deque<Item> post_queue_;
 	  std::vector<char> receive_buffer_;
   };

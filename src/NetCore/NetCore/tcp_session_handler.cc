@@ -43,7 +43,7 @@ namespace netcore {
         return;
       }
       DELIVERY_MESSAGE(MessageType::kWriteEvent);
-    } catch (Poco::Exception& exception) {
+    } catch (Poco::Exception& /*exception*/) {
       DELIVERY_MESSAGE(MessageType::kShutdownEvent);
     }
   }
@@ -55,7 +55,7 @@ namespace netcore {
       } else if (context_ != nullptr && context_->event != nullptr) {
 		    context_->event->OnRead(id_, &read_fifo_);
       }
-    } catch (Poco::Exception& exception) {
+    } catch (Poco::Exception& /*exception*/) {
       DELIVERY_MESSAGE(MessageType::kShutdownEvent);
     }
   }

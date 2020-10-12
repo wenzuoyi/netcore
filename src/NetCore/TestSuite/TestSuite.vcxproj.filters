@@ -21,9 +21,15 @@
     <ClCompile Include="test_main.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="udp_server_testsuite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tcp_server_testsuite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="udp_server_testsuite.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
