@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="tcp">
+      <UniqueIdentifier>{2bf2482c-7f1e-4487-a6df-151a8d1f1991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tcp\server">
+      <UniqueIdentifier>{d5994b87-1131-4b13-bdf0-b86f4add5ca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tcp\client">
+      <UniqueIdentifier>{4a68732a-8fa1-4382-8908-c46b674dfaf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{177ece59-45b8-4013-b53c-24ac3849ced5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="udp">
+      <UniqueIdentifier>{3054228d-6e53-4803-9c2a-07e283c0bfda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="udp\server">
+      <UniqueIdentifier>{bef8f16a-4ec1-45f1-b18a-f4d0e08afa6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="udp\client">
+      <UniqueIdentifier>{501e202f-4556-463d-85c7-c1a4c06adb1a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\global_definition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\netcore_datatype.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\netcore_errorcode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tcp_server.h">
+      <Filter>tcp\server</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_server_impl.h">
+      <Filter>tcp\server</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_session_handler.h">
+      <Filter>tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tcp_client.h">
+      <Filter>tcp\client</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_client_impl.h">
+      <Filter>tcp\client</Filter>
+    </ClInclude>
+    <ClInclude Include="base_session_handler.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="reactor_message_notification.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="base_session_datatype.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp_acceptor.h">
+      <Filter>tcp\server</Filter>
+    </ClInclude>
+    <ClInclude Include="include\udp_server.h">
+      <Filter>udp\server</Filter>
+    </ClInclude>
+    <ClInclude Include="udp_server_impl.h">
+      <Filter>udp\server</Filter>
+    </ClInclude>
+    <ClInclude Include="udp_session_handler.h">
+      <Filter>udp</Filter>
+    </ClInclude>
+    <ClInclude Include="base_session.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="session_list.hpp">
+      <Filter>base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="reactor_message_notification.cc">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_server.cc">
+      <Filter>tcp\server</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_session_handler.cc">
+      <Filter>tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_server_impl.cc">
+      <Filter>tcp\server</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_client.cc">
+      <Filter>tcp\client</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_client_impl.cc">
+      <Filter>tcp\client</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp_acceptor.cc">
+      <Filter>tcp\server</Filter>
+    </ClCompile>
+    <ClCompile Include="udp_server.cpp">
+      <Filter>udp\server</Filter>
+    </ClCompile>
+    <ClCompile Include="udp_server_impl.cc">
+      <Filter>udp\server</Filter>
+    </ClCompile>
+    <ClCompile Include="udp_session_handler.cc">
+      <Filter>udp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
